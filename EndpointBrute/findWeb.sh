@@ -11,10 +11,10 @@ while read line; do
 
   line=""$url"$line"
   # Print the line.
-  headers=$(curl -sI "$line" | grep -E '^HTTP/1.[0-9] \d{3}|Content-Type:' | sed 's/.*:\s//')
-  if [[ $headers =~ "404" ]]; then
+  headers=$(curl -sI "$line")
+  if [[ $headers =~ "404" || $headers =~ "400" ]]; then
   echo "404"
   else
-   echo "$line"
+   echo "$headers"
   fi
 done < "$file"

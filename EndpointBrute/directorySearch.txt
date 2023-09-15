@@ -126,3 +126,13 @@ js.aspx
 js.html
 robots.txt
 sitemap.xml
+api
+v1
+docs
+REST
+home
+v2
+console
+ui
+cgi-bin
+cgi
